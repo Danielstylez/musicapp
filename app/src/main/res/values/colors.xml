@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#38c172</color>
-    <color name="colorPrimaryDark">#008f45</color>
-    <color name="colorPrimaryLight">#72f5a1</color>
+    <color name="colorPrimary">#c256f8</color>
+    <color name="colorPrimaryDark">#8e1ec4</color>
+    <color name="colorPrimaryLight">#f888ff</color>
     <color name="colorAccent">#ffffff</color>
+
+    <color name="homeNavigationDisabled">#D1D1D1</color>
+
+    <color name="musicPlayerPrimary">#c256f8</color>
+    <color name="musicPlayerDark">#8e1ec4</color>
+    <color name="galleryPrimary">#6f60f8</color>
+    <color name="galleryDark">#3035c4</color>
+    <color name="profilePrimary">#8bc34a</color>
+    <color name="profileDark">#5a9216</color>
 </resources>
