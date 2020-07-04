@@ -7,10 +7,10 @@
 
     <color name="homeNavigationDisabled">#D1D1D1</color>
 
-    <color name="musicPlayerPrimary">#c256f8</color>
-    <color name="musicPlayerDark">#8e1ec4</color>
+    <color name="musicPlayerPrimary">#546e7a</color>
+    <color name="musicPlayerDark">#29434e</color>
     <color name="galleryPrimary">#6f60f8</color>
     <color name="galleryDark">#3035c4</color>
-    <color name="profilePrimary">#90a4ae</color>
-    <color name="profileDark">#62757f</color>
+    <color name="profilePrimary">#43a047</color>
+    <color name="profileDark">#00701a</color>
 </resources>

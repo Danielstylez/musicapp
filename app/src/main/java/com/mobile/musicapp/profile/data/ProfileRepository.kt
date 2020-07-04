@@ -1,8 +1,6 @@
 package com.mobile.musicapp.profile.data
 
-import androidx.lifecycle.LiveData
-import com.mobile.musicapp.profile.data.db.AppDatabase
-import com.mobile.musicapp.profile.data.db.User
+import com.mobile.musicapp.base.AppDatabase
 
 class ProfileRepository(val appDatabase: AppDatabase) {
 

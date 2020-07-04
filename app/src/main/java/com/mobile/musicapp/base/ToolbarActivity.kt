@@ -8,11 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.mobile.musicapp.R
-import com.mobile.musicapp.gallery.list.view.GalleryFragment
 import com.mobile.musicapp.home.color.MenuColor
-import com.mobile.musicapp.musicplayer.MusicPlayerFragment
-import com.mobile.musicapp.profile.view.ProfileFragment
-import kotlinx.android.synthetic.main.home_activity.*
 
 abstract class ToolbarActivity : AppCompatActivity() {
     private var toolbar: Toolbar? = null

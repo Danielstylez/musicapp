@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mobile.musicapp.profile.data.ProfileRepository
-import com.mobile.musicapp.profile.data.db.DatabaseBuilder
-import com.mobile.musicapp.profile.data.db.User
+import com.mobile.musicapp.base.DatabaseBuilder
+import com.mobile.musicapp.profile.data.User
 import kotlinx.coroutines.launch
 
 class ProfileViewModel : ViewModel() {

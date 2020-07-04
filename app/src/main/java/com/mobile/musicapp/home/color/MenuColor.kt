@@ -2,7 +2,7 @@ package com.mobile.musicapp.home.color
 
 import com.mobile.musicapp.R
 import com.mobile.musicapp.gallery.list.view.GalleryFragment
-import com.mobile.musicapp.musicplayer.MusicPlayerFragment
+import com.mobile.musicapp.musicplayer.view.MusicPlayerFragment
 import com.mobile.musicapp.profile.view.ProfileFragment
 
 class MenuColor {
