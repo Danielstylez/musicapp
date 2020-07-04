@@ -1,18 +1,16 @@
 package com.mobile.musicapp.home.view
 
-import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.Window
-import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mobile.musicapp.R
-import com.mobile.musicapp.gallery.view.GalleryFragment
+import com.mobile.musicapp.base.ToolbarActivity
+import com.mobile.musicapp.gallery.list.view.GalleryFragment
+import com.mobile.musicapp.home.color.MenuColor
 import com.mobile.musicapp.musicplayer.MusicPlayerFragment
 import com.mobile.musicapp.profile.view.ProfileFragment
 import kotlinx.android.synthetic.main.home_activity.*
@@ -21,7 +19,7 @@ import kotlinx.android.synthetic.main.home_activity.*
  * Actividad que muestra el menú principal y los correspondientes menús: Galería, Perfil del usuario
  * y Reproductor a través de fragmentos.
  */
-class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : ToolbarActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     lateinit var homeViewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +31,6 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         homeViewModel.selectedMenuLiveData.observe(this, Observer {
             if (it != null) {
                 showFragment(it)
-                setPaletteColor(it)
             }
         })
     }
@@ -94,41 +91,11 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
     }
 
-    /**
-     * Cambia la paleta de colores según el menú que se haya elegido.
-     *
-     * @throws IllegalArgumentException
-     */
-    private fun setPaletteColor(tag: String) {
-        var dark = 0
-        var primary = 0
+    override fun setPaletteColor(tag: String) {
+        super.setPaletteColor(tag)
 
-        when (tag) {
-            MusicPlayerFragment::class.java.simpleName -> {
-                primary = R.color.musicPlayerPrimary
-                dark = R.color.musicPlayerDark
-            }
-            GalleryFragment::class.java.simpleName -> {
-                primary = R.color.galleryPrimary
-                dark = R.color.galleryDark
-            }
-            ProfileFragment::class.java.simpleName -> {
-                primary = R.color.profilePrimary
-                dark = R.color.profileDark
-            }
-            else -> throw IllegalArgumentException("No existe el fragmento dado")
-        }
+        val color = ContextCompat.getColor(this, MenuColor.getPrimaryRes(tag))
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window: Window = window
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.statusBarColor = ContextCompat.getColor(this, dark)
-        }
-
-
-
-
-        homeNavigationView.setBackgroundColor(ContextCompat.getColor(this, primary))
+        homeNavigationView.setBackgroundColor(color)
     }
 }
